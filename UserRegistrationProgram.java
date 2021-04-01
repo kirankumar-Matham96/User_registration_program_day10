@@ -47,16 +47,35 @@ public class UserRegistrationProgram
 			return "invalid";
 	}
 
+	/*
+	 * UC-5: validating password
+	 */
+	public static String validatePassWord(String passWord)
+	{
+		/*
+	         * Rule1: minimum 8 characters
+	         */
+
+		if(Pattern.matches(".{8,}", passWord))
+			return "valid";
+		else
+			return "invalid";
+	}
+
+
 	//main method
 	public static void main(String[] args)
 	{
 		String firstName = "Rahul";
 		String lastName = "Shinde";
 		long phoneNumber = 918688332960L;
+		String passWord = "Anap9P#lesL@d65ef";
 
 		System.out.println("first name: "+validateFirstName(firstName));
 		System.out.println("last name: "+validateLastName(lastName));
 		System.out.println("phone numbar: "+validatePhoneNumber(Long.toString(phoneNumber)));
 		System.out.println("Rahul@gmail.com: "+validateEmail("Rahul@gmail.com"));
+		System.out.println("password: "+validatePassWord(passWord));
+
 	}
 }
