@@ -25,14 +25,24 @@ public class UserRegistrationProgram
 			return "invalid";
 	}
 
+	/*
+	 * UC-3: validating email
+	 */
+	public static String validateEmail(String email)
+	{
+		if(Pattern.matches("^[-a-zA-Z0-9+]+(.{1}[-a-zA-Z0-9])*@([a-zA-Z0-9]+)(.[a-zA-Z]+)?.[a-zA-Z]{2,}$", email))
+			return "valid";
+		else
+			return "invalid";
+	}
+
 	//main method
 	public static void main(String[] args)
 	{
 		String firstName = "Rahul";
 		String lastName = "Shinde";
-
 		System.out.println("first name: "+validateFirstName(firstName));
 		System.out.println("last name: "+validateLastName(lastName));
-
+		System.out.println("Rahul@gmail.com: "+validateEmail("Rahul@gmail.com"));
 	}
 }
