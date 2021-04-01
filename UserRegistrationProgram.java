@@ -55,9 +55,10 @@ public class UserRegistrationProgram
 		/*
 	         * Rule1: minimum 8 characters
 		 * Rule2: minimum 1 upper case
+		 * Rule3: minimum 1 numeric
 	         */
 
-		if(Pattern.matches("(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*()_+]{8,}", passWord))
+		if(Pattern.matches("(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#$%^&*()_+]{8,}", passWord))
 			return "valid";
 		else
 			return "invalid";
