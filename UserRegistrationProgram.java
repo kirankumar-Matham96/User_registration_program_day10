@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-
 public class UserRegistrationProgram
 {
 	/*
@@ -15,10 +14,25 @@ public class UserRegistrationProgram
 			return "invalid";
 	}
 
+	/*
+	 * UC-2: validating last name
+	 */
+	public static String validateLastName(String lastName)
+	{
+		if(Pattern.matches("^[A-Z]{1}[a-z]{2,}", lastName))
+			return "valid";
+		else
+			return "invalid";
+	}
+
 	//main method
 	public static void main(String[] args)
 	{
 		String firstName = "Rahul";
+		String lastName = "Shinde";
+
 		System.out.println("first name: "+validateFirstName(firstName));
+		System.out.println("last name: "+validateLastName(lastName));
+
 	}
 }
