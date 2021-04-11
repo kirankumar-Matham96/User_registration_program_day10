@@ -25,7 +25,7 @@ public class UserRegistrationProgram {
     }
     
     /*
-     * UC-4: validating predefined mobile number
+     * UC-4: validating predefined mobile number with space
      */
     public static boolean validatePhoneNumber(String phoneNumber) {
         return Pattern.matches("^[91]{2}\\s[0-9]{10}", phoneNumber);
